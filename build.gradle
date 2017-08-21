@@ -73,11 +73,11 @@ uploadArchives {
 
             pom.project {
                 packaging 'jar'
-                name 'JSON Logger'
-                description 'Library to allow logging in json format and ability to config automatic logging of environment variables'
+                name 'Java Lambda Request Response'
+                description 'Library containing useful classes when writing AWS Lambda fucntions in Java'
                 groupId 'com.github.michaelruocco'
-                artifactId 'json-logger'
-                version '1.0.1'
+                artifactId 'java-lambda-request-response'
+                version '1.0.0'
                 url 'https://github.com/michaelruocco/java-lambda-request-response'
 
                 developers {
