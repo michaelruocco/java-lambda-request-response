@@ -1,0 +1,42 @@
+{
+  "resource": "my-resource",
+  "path": "my-path/param1/param2",
+  "httpMethod": "GET",
+  "headers": {
+    "header2": "value2",
+    "header1": "value1"
+  },
+  "queryStringParameters": {},
+  "pathParameters": {
+    "param1": "value1",
+    "param2": "value2"
+  },
+  "stageVariables": {
+    "var2": "value2",
+    "var1": "value1"
+  },
+  "requestContext": {
+    "accountId": "my-account-id",
+    "resourceId": "my-resource-id",
+    "stage": "my-stage",
+    "requestId": "my-request-id",
+    "identity": {
+      "cognitoIdentityPoolId": "my-cognito-identity-pool-id",
+      "accountId": "my-account-id",
+      "cognitoIdentityId": "my-cognito-identity-id",
+      "caller": "my-caller",
+      "apiKey": "my-api-key",
+      "sourceIp": "my-source-ip",
+      "cognitoAuthenticationType": "my-cognito-authentication-type",
+      "cognitoAuthenticationProvider": "my-cognito-authentication-provider",
+      "userArn": "my-user-arn",
+      "userAgent": "my-user-agent",
+      "user": "my-user"
+    },
+    "resourcePath": "my-resource-path",
+    "httpMethod": "GET",
+    "apiId": "my-api-id"
+  },
+  "body": "my-body",
+  "isBase64Encoded": true
+}

@@ -1,0 +1,13 @@
+{
+  "account": "my-account",
+  "region": "my-region",
+  "detail": "{}",
+  "detailType": "my-detail-type",
+  "source": "my-source",
+  "time": "2017-08-21T06:05:08",
+  "id": "my-id",
+  "resources": [
+    "resource1",
+    "resource2"
+  ]
+}
