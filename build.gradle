@@ -77,7 +77,7 @@ uploadArchives {
                 description 'Library containing useful classes when writing AWS Lambda fucntions in Java'
                 groupId 'com.github.michaelruocco'
                 artifactId 'java-lambda-request-response'
-                version '1.0.0'
+                version '1.0.1'
                 url 'https://github.com/michaelruocco/java-lambda-request-response'
 
                 developers {
