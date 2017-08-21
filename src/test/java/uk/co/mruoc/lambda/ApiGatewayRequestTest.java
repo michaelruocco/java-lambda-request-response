@@ -90,6 +90,20 @@ public class ApiGatewayRequestTest {
     }
 
     @Test
+    public void hasHeaderShouldReturnFalseIfHeaderDoesNotExist() {
+        assertThat(request.hasHeader("Content-Type")).isFalse();
+    }
+
+    @Test
+    public void hasHeaderShouldReturnTrueIfHeaderExists() {
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Content-Type", "application/json");
+        request.setHeaders(headers);
+
+        assertThat(request.hasHeader("Content-Type")).isTrue();
+    }
+
+    @Test
     public void shouldReturnContentTypeHeader() {
         Map<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");

@@ -44,6 +44,10 @@ public class ApiGatewayRequest {
         return EMPTY;
     }
 
+    public boolean hasHeader(String key) {
+        return hasHeaders() && headers.containsKey(key);
+    }
+
     public String getQueryStringParameter(String key) {
         return queryStringParameters.get(key);
     }
@@ -138,10 +142,6 @@ public class ApiGatewayRequest {
 
     private boolean hasRequestContext() {
         return requestContext != null;
-    }
-
-    private boolean hasHeader(String key) {
-        return hasHeaders() && headers.containsKey(key);
     }
 
     private boolean hasHeaders() {
