@@ -7,3 +7,14 @@
 
 This project contains request and response objects that can be used when
 writing AWS Lambda functions in Java.
+
+## Usage
+
+To use the library from a program you will need to add a dependency to your project. In
+gradle you would do this by adding the following to your build.gradle file:
+
+```
+dependencies {
+    compile 'com.github.michaelruocco:java-lambda-request-response:1.0.2'
+}
+```
