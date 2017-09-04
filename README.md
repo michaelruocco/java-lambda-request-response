@@ -15,6 +15,6 @@ gradle you would do this by adding the following to your build.gradle file:
 
 ```
 dependencies {
-    compile 'com.github.michaelruocco:java-lambda-request-response:1.0.2'
+    compile 'com.github.michaelruocco:java-lambda-request-response:1.0.3'
 }
 ```
