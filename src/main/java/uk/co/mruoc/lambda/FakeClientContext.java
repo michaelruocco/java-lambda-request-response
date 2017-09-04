@@ -3,7 +3,6 @@ package uk.co.mruoc.lambda;
 import com.amazonaws.services.lambda.runtime.Client;
 import com.amazonaws.services.lambda.runtime.ClientContext;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class FakeClientContext implements ClientContext {
