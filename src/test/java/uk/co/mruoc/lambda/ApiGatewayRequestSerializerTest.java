@@ -14,7 +14,7 @@ public class ApiGatewayRequestSerializerTest {
 
     @Test
     public void shouldSerializeApiGatewayRequest() {
-        ApiGatewayRequest request = new FakeApiGatewayRequest();
+        ApiGatewayRequest request = new DummyApiGatewayRequest();
 
         JsonElement element = serializer.serialize(request,null, null);
 

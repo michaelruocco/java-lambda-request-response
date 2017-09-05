@@ -3,9 +3,9 @@ package uk.co.mruoc.lambda;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FakeApiGatewayRequest extends ApiGatewayRequest {
+public class DummyApiGatewayRequest extends ApiGatewayRequest {
 
-    public FakeApiGatewayRequest() {
+    public DummyApiGatewayRequest() {
         setResource("my-resource");
         setPath("my-path/param1/param2");
         setHttpMethod("GET");
