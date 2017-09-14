@@ -4,12 +4,16 @@ import com.google.gson.JsonObject;
 
 public class ErrorLambdaResponse extends LambdaResponse {
 
+    public ErrorLambdaResponse() {
+        // intentionally blank
+    }
+
     public void setErrorMessage(String message) {
         String json = toJson(message);
         setBody(json);
     }
 
-    private String toJson(String message) {
+    private static String toJson(String message) {
         JsonObject json = new JsonObject();
         json.addProperty("message", message);
         return json.toString();

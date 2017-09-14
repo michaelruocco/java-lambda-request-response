@@ -8,4 +8,8 @@ public class BadRequestLambdaResponse extends ErrorLambdaResponse {
         setStatusCode(SC_BAD_REQUEST);
     }
 
+    public BadRequestLambdaResponse(String message) {
+        setErrorMessage(message);
+    }
+
 }

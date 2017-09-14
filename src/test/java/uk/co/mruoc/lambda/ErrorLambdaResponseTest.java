@@ -4,13 +4,13 @@ import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class NotFoundLambdaResponseTest {
+public class ErrorLambdaResponseTest {
 
-    private NotFoundLambdaResponse response = new NotFoundLambdaResponse();
+    private ErrorLambdaResponse response = new ErrorLambdaResponse();
 
     @Test
-    public void statusCodeShouldDefaultTo404() {
-        assertThat(response.getStatusCode()).isEqualTo(404);
+    public void statusCodeShouldDefaultToZero() {
+        assertThat(response.getStatusCode()).isEqualTo(0);
     }
 
     @Test
@@ -30,15 +30,6 @@ public class NotFoundLambdaResponseTest {
         response.setErrorMessage(message);
 
         assertThat(response.getBody()).isEqualTo("{\"message\":\"some error message\"}");
-    }
-
-    @Test
-    public void shouldCreateWithErrorMessage() {
-        String message = "some error message";
-
-        LambdaResponse createdResponse = new NotFoundLambdaResponse(message);
-
-        assertThat(createdResponse.getBody()).isEqualTo("{\"message\":\"some error message\"}");
     }
 
 }

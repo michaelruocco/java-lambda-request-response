@@ -32,4 +32,13 @@ public class ConflictLambdaResponseTest {
         assertThat(response.getBody()).isEqualTo("{\"message\":\"some error message\"}");
     }
 
+    @Test
+    public void shouldCreateWithErrorMessage() {
+        String message = "some error message";
+
+        LambdaResponse createdResponse = new ConflictLambdaResponse(message);
+
+        assertThat(createdResponse.getBody()).isEqualTo("{\"message\":\"some error message\"}");
+    }
+
 }

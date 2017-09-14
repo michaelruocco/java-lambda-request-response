@@ -8,4 +8,8 @@ public class UnprocessableEntityLambdaResponse extends ErrorLambdaResponse {
         setStatusCode(SC_UNPROCESSABLE_ENTITY);
     }
 
+    public UnprocessableEntityLambdaResponse(String message) {
+        setErrorMessage(message);
+    }
+
 }

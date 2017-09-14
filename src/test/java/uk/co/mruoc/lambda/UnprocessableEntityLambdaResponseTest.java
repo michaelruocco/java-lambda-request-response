@@ -32,4 +32,13 @@ public class UnprocessableEntityLambdaResponseTest {
         assertThat(response.getBody()).isEqualTo("{\"message\":\"some error message\"}");
     }
 
+    @Test
+    public void shouldCreateWithErrorMessage() {
+        String message = "some error message";
+
+        LambdaResponse createdResponse = new UnprocessableEntityLambdaResponse(message);
+
+        assertThat(createdResponse.getBody()).isEqualTo("{\"message\":\"some error message\"}");
+    }
+
 }

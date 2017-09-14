@@ -11,6 +11,15 @@ public class LambdaResponse {
     private String body = EMPTY;
     private Map<String, String> headers = new HashMap<>();
 
+    public LambdaResponse() {
+        // intentionally blank
+    }
+
+    public LambdaResponse(int statusCode, String body) {
+        setStatusCode(statusCode);
+        setBody(body);
+    }
+
     public int getStatusCode() {
         return this.statusCode;
     }

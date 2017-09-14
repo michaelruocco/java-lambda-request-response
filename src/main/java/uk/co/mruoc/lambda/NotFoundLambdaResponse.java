@@ -8,4 +8,8 @@ public class NotFoundLambdaResponse extends ErrorLambdaResponse {
         setStatusCode(SC_NOT_FOUND);
     }
 
+    public NotFoundLambdaResponse(String message) {
+        setErrorMessage(message);
+    }
+
 }

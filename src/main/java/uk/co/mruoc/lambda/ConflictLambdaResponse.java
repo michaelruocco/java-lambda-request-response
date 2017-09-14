@@ -8,4 +8,8 @@ public class ConflictLambdaResponse extends ErrorLambdaResponse {
         setStatusCode(SC_CONFLICT);
     }
 
+    public ConflictLambdaResponse(String message) {
+        setErrorMessage(message);
+    }
+
 }

@@ -23,4 +23,13 @@ public class CreatedLambdaResponseTest {
         assertThat(response.getHeaders().isEmpty()).isTrue();
     }
 
+    @Test
+    public void shouldCreateWithBody() {
+        String body = "some-body";
+
+        LambdaResponse createdResponse = new CreatedLambdaResponse(body);
+
+        assertThat(createdResponse.getBody()).isEqualTo(body);
+    }
+
 }
