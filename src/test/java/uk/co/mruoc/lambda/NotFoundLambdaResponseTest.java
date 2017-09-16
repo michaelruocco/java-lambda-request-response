@@ -2,6 +2,7 @@ package uk.co.mruoc.lambda;
 
 import org.junit.Test;
 
+import static org.apache.http.HttpStatus.SC_NOT_FOUND;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class NotFoundLambdaResponseTest {
@@ -9,8 +10,8 @@ public class NotFoundLambdaResponseTest {
     private NotFoundLambdaResponse response = new NotFoundLambdaResponse();
 
     @Test
-    public void statusCodeShouldDefaultTo404() {
-        assertThat(response.getStatusCode()).isEqualTo(404);
+    public void statusCodeShouldDefaultToNotFound() {
+        assertThat(response.getStatusCode()).isEqualTo(SC_NOT_FOUND);
     }
 
     @Test
@@ -39,6 +40,15 @@ public class NotFoundLambdaResponseTest {
         LambdaResponse createdResponse = new NotFoundLambdaResponse(message);
 
         assertThat(createdResponse.getBody()).isEqualTo("{\"message\":\"some error message\"}");
+    }
+
+    @Test
+    public void statusCodeShouldDefaultToNotFoundWhenCreatedWithBody() {
+        String body = "some-body";
+
+        LambdaResponse createdResponse = new NotFoundLambdaResponse(body);
+
+        assertThat(createdResponse.getStatusCode()).isEqualTo(SC_NOT_FOUND);
     }
 
 }

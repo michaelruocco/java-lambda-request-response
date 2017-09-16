@@ -10,7 +10,8 @@ public class CreatedLambdaResponse extends LambdaResponse {
     }
 
     public CreatedLambdaResponse(String body) {
-        super(SC_OK, body);
+        this();
+        setBody(body);
     }
 
 }

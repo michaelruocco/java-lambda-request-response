@@ -9,6 +9,7 @@ public class ConflictLambdaResponse extends ErrorLambdaResponse {
     }
 
     public ConflictLambdaResponse(String message) {
+        this();
         setErrorMessage(message);
     }
 

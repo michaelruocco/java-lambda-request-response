@@ -15,11 +15,6 @@ public class LambdaResponse {
         // intentionally blank
     }
 
-    public LambdaResponse(int statusCode, String body) {
-        setStatusCode(statusCode);
-        setBody(body);
-    }
-
     public int getStatusCode() {
         return this.statusCode;
     }

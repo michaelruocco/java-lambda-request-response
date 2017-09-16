@@ -2,6 +2,7 @@ package uk.co.mruoc.lambda;
 
 import org.junit.Test;
 
+import static org.apache.http.HttpStatus.SC_OK;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class OkLambdaResponseTest {
@@ -9,8 +10,8 @@ public class OkLambdaResponseTest {
     private final LambdaResponse response = new OkLambdaResponse();
 
     @Test
-    public void statusCodeShouldDefaultTo200() {
-        assertThat(response.getStatusCode()).isEqualTo(200);
+    public void statusCodeShouldDefaultToOk() {
+        assertThat(response.getStatusCode()).isEqualTo(SC_OK);
     }
 
     @Test
@@ -30,6 +31,15 @@ public class OkLambdaResponseTest {
         LambdaResponse createdResponse = new OkLambdaResponse(body);
 
         assertThat(createdResponse.getBody()).isEqualTo(body);
+    }
+
+    @Test
+    public void statusCodeShouldDefaultToOkWhenCreatedWithBody() {
+        String body = "some-body";
+
+        LambdaResponse createdResponse = new OkLambdaResponse(body);
+
+        assertThat(createdResponse.getStatusCode()).isEqualTo(SC_OK);
     }
 
 }

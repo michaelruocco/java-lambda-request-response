@@ -9,6 +9,7 @@ public class OkLambdaResponse extends LambdaResponse {
     }
 
     public OkLambdaResponse(String body) {
+        this();
         setBody(body);
     }
 

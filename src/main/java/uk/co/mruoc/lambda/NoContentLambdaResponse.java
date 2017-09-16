@@ -2,9 +2,9 @@ package uk.co.mruoc.lambda;
 
 import static org.apache.http.HttpStatus.SC_NO_CONTENT;
 
-public class NotContentLambdaResponse extends LambdaResponse {
+public class NoContentLambdaResponse extends LambdaResponse {
 
-    public NotContentLambdaResponse() {
+    public NoContentLambdaResponse() {
         setStatusCode(SC_NO_CONTENT);
     }
 

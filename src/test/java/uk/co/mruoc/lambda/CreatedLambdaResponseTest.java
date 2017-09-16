@@ -2,6 +2,7 @@ package uk.co.mruoc.lambda;
 
 import org.junit.Test;
 
+import static org.apache.http.HttpStatus.SC_CREATED;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CreatedLambdaResponseTest {
@@ -9,8 +10,8 @@ public class CreatedLambdaResponseTest {
     private final LambdaResponse response = new CreatedLambdaResponse();
 
     @Test
-    public void statusCodeShouldDefaultTo201() {
-        assertThat(response.getStatusCode()).isEqualTo(201);
+    public void statusCodeShouldDefaultToCreated() {
+        assertThat(response.getStatusCode()).isEqualTo(SC_CREATED);
     }
 
     @Test
@@ -30,6 +31,15 @@ public class CreatedLambdaResponseTest {
         LambdaResponse createdResponse = new CreatedLambdaResponse(body);
 
         assertThat(createdResponse.getBody()).isEqualTo(body);
+    }
+
+    @Test
+    public void statusCodeShouldDefaultToCreatedWhenCreatedWithBody() {
+        String body = "some-body";
+
+        LambdaResponse createdResponse = new CreatedLambdaResponse(body);
+
+        assertThat(createdResponse.getStatusCode()).isEqualTo(SC_CREATED);
     }
 
 }

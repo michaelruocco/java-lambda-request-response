@@ -2,6 +2,7 @@ package uk.co.mruoc.lambda;
 
 import org.junit.Test;
 
+import static org.apache.http.HttpStatus.SC_UNPROCESSABLE_ENTITY;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class UnprocessableEntityLambdaResponseTest {
@@ -9,8 +10,8 @@ public class UnprocessableEntityLambdaResponseTest {
     private UnprocessableEntityLambdaResponse response = new UnprocessableEntityLambdaResponse();
 
     @Test
-    public void statusCodeShouldDefaultTo422() {
-        assertThat(response.getStatusCode()).isEqualTo(422);
+    public void statusCodeShouldDefaultToUnprocessableEntity() {
+        assertThat(response.getStatusCode()).isEqualTo(SC_UNPROCESSABLE_ENTITY);
     }
 
     @Test
@@ -39,6 +40,15 @@ public class UnprocessableEntityLambdaResponseTest {
         LambdaResponse createdResponse = new UnprocessableEntityLambdaResponse(message);
 
         assertThat(createdResponse.getBody()).isEqualTo("{\"message\":\"some error message\"}");
+    }
+
+    @Test
+    public void statusCodeShouldDefaultToUnproessableEntityWhenCreatedWithErrorMessage() {
+        String message = "some error message";
+
+        LambdaResponse createdResponse = new UnprocessableEntityLambdaResponse(message);
+
+        assertThat(createdResponse.getStatusCode()).isEqualTo(SC_UNPROCESSABLE_ENTITY);
     }
 
 }

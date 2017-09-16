@@ -2,6 +2,7 @@ package uk.co.mruoc.lambda;
 
 import org.junit.Test;
 
+import static org.apache.http.HttpStatus.SC_CONFLICT;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ConflictLambdaResponseTest {
@@ -9,8 +10,8 @@ public class ConflictLambdaResponseTest {
     private ConflictLambdaResponse response = new ConflictLambdaResponse();
 
     @Test
-    public void statusCodeShouldDefaultTo409() {
-        assertThat(response.getStatusCode()).isEqualTo(409);
+    public void statusCodeShouldDefaultToConflict() {
+        assertThat(response.getStatusCode()).isEqualTo(SC_CONFLICT);
     }
 
     @Test
@@ -39,6 +40,15 @@ public class ConflictLambdaResponseTest {
         LambdaResponse createdResponse = new ConflictLambdaResponse(message);
 
         assertThat(createdResponse.getBody()).isEqualTo("{\"message\":\"some error message\"}");
+    }
+
+    @Test
+    public void statusCodeShouldDefaultToConflictWhenCreatedWithBody() {
+        String body = "some-body";
+
+        LambdaResponse createdResponse = new ConflictLambdaResponse(body);
+
+        assertThat(createdResponse.getStatusCode()).isEqualTo(SC_CONFLICT);
     }
 
 }

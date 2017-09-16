@@ -9,6 +9,7 @@ public class UnprocessableEntityLambdaResponse extends ErrorLambdaResponse {
     }
 
     public UnprocessableEntityLambdaResponse(String message) {
+        this();
         setErrorMessage(message);
     }
 

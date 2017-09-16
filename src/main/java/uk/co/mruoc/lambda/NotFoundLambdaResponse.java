@@ -9,6 +9,7 @@ public class NotFoundLambdaResponse extends ErrorLambdaResponse {
     }
 
     public NotFoundLambdaResponse(String message) {
+        this();
         setErrorMessage(message);
     }
 

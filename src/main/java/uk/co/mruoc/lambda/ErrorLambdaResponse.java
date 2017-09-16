@@ -8,6 +8,10 @@ public class ErrorLambdaResponse extends LambdaResponse {
         // intentionally blank
     }
 
+    public ErrorLambdaResponse(String message) {
+        setErrorMessage(message);
+    }
+
     public void setErrorMessage(String message) {
         String json = toJson(message);
         setBody(json);

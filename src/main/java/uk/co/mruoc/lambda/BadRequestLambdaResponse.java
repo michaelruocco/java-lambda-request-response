@@ -9,6 +9,7 @@ public class BadRequestLambdaResponse extends ErrorLambdaResponse {
     }
 
     public BadRequestLambdaResponse(String message) {
+        this();
         setErrorMessage(message);
     }
 
