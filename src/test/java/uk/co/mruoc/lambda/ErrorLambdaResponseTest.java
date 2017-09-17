@@ -32,4 +32,13 @@ public class ErrorLambdaResponseTest {
         assertThat(response.getBody()).isEqualTo("{\"message\":\"some error message\"}");
     }
 
+    @Test
+    public void shouldCreateWithErrorMessage() {
+        String message = "some error message";
+
+        response = new ErrorLambdaResponse(message);
+
+        assertThat(response.getBody()).isEqualTo("{\"message\":\"some error message\"}");
+    }
+
 }
