@@ -7,6 +7,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class FakeApiGatewayRequestTest {
 
     @Test
+    public void shouldCreateRequestWithPathParameter() {
+        String key = "custom-param";
+        String value = "my-value";
+
+        FakeApiGatewayRequest request = new FakeApiGatewayRequest().withPathParameter(key, value);
+
+        assertThat(request.getPathParameter(key)).isEqualTo(value);
+    }
+
+    @Test
     public void shouldCreateRequestWithId() {
         String id = "my-id";
 

@@ -6,9 +6,12 @@ import java.util.Map;
 public class FakeApiGatewayRequest extends ApiGatewayRequest {
 
     public FakeApiGatewayRequest withId(String id) {
-        Map<String, String> pathParameters = new HashMap<>();
-        pathParameters.put("id", id);
-        setPathParameters(pathParameters);
+        return withPathParameter("id", id);
+    }
+
+    public FakeApiGatewayRequest withPathParameter(String key, String value) {
+        Map<String, String> parameters = getPathParameters();
+        parameters.put(key, value);
         return this;
     }
 
